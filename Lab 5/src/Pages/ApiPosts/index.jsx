@@ -1,14 +1,13 @@
 import { useApiContext } from '../../hooks/useApiContext';
-import { useEffect, useState, useContext } from "react";
-import { ApiContext } from '../../contexts/ApiContext';
+import { useEffect, useState } from "react";
 
 export const ApiPosts = ()=> {
     const[posts, setPosts] = useState([])
     const getPosts = useApiContext()
 
-    useEffect(() => {
-        getPosts().then(setPosts)
-        })
+  useEffect(() => {
+    getPosts().then(setPosts);
+  }, []);
 
     if (!posts.length) return <h1>Loading...</h1>;
     return(<>

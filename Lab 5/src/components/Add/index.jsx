@@ -1,12 +1,10 @@
-import { useState, useContext } from "react"
+import { useState } from "react"
 import { Input } from "../Input"
-import { ApiContext } from '../../contexts/ApiContext';
 import { useApiContextPost } from '../../hooks/useApiContextPost';
 
 export const Add = (props) => {
 const [todo, setTodo] = useState("Task Name")
 const [desc, setDesc] = useState("Description")
-const apiContext = useContext(ApiContext)
 const poster = useApiContextPost()
     
 const handleSubmit = () => {
